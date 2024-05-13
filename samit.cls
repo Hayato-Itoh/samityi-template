@@ -611,7 +611,7 @@
    {0.50\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
 %  {0.25ex \@plus 1ex \@minus .2ex}%
    {0.25ex \@plus 1ex \@minus .2ex}%
-   {\reset@font\fontsize{9bp}{14.95bp}\gt}{\hspace{-2mm}#1}
+   {\reset@font\fontsize{9bp}{14.95bp}\mc}{\hspace{-2mm}#1}
 }
 
 \newcommand{\subsubsection}[1]{\@startsection{subsubsection}{3}{\z@}%
