@@ -8,20 +8,25 @@
 \usepackage{newtxtext,newtxmath} %for Times New Roman
 \usepackage{subfigure} % for multiple figure presentation
 
+% change margin around an equation
+\AtBeginDocument{
+  \abovedisplayskip=0.3\abovedisplayskip            %長い数式の前のスペース
+  \abovedisplayshortskip=0.3\abovedisplayshortskip  %短い数式の前のスペース
+  \belowdisplayskip=0.3\belowdisplayskip            %長い数式の後ろのスペース
+  \belowdisplayshortskip=0.3\belowdisplayshortskip} %短い数式の後ろのスペース
+
 \makeatletter
 \def\setcaption#1{\def\@captype{#1}}
 \makeatother
 
 %%% タイトル・著者・所属・要旨 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \Title{
-SAMIT予稿タイトル
-}
+SAMIT予稿タイトル}
 
 \TitleE{
 Please ignore this part (Do not remove it).
 Dammy title is OK.
-This definition is designed for JAMIT manuscript, not for SAMIT manuscript.
-}
+This definition is designed for JAMIT manuscript, not for SAMIT manuscript.}
 
 \Abstract{
 この部分に400字以内で和文要旨を書いてください．ふわああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああお
@@ -30,28 +35,25 @@ This definition is designed for JAMIT manuscript, not for SAMIT manuscript.
 
 \Author{
 \Authorentry{山田　太郎}[1], \ \
-\Authorentry{鈴木　次郎}[2]
-}
+\Authorentry{鈴木　次郎}[2]}
+
 \Affiliate{
 \Affiliation[1]{筑波大学大学院システム情報工学研究科コンピュータサイエンス専攻\\}
-\Affiliation[2]{(株)医用画像研究所\\}
-}
+\Affiliation[2]{(株)医用画像研究所\\}}
 
 %..............................................................................................................................%
 % comment out
 \if 0
 \AuthorE{
 \Authorentry{Taro YAMADA}[1],
-\Authorentry{Jiro Suzuki}[2], 
-}
+\Authorentry{Jiro SUZUKI}[2]}
 \AbstractE{
 Hoge
 }
 \KeywordsE{template, format, font, font size, margin}
 \AffiliateE{
-\AffiliationE[1]{University of Tsukuba},
-\AffiliationE[2]{Medical Imaging Laboratories, Ltd.},
-}
+\AffiliationE[1]{University of Tsukuba\\}
+\AffiliationE[2]{Medical Imaging Laboratories, Ltd.}}
 \fi
 %..............................................................................................................................%
 
@@ -113,6 +115,17 @@ pLaTeXで執筆される方はこのフォーマットに従って原稿を作成してください. 原稿執筆に
 
 %/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
+% ----- 表を表示したい場合 --------------
+%\begin{table}
+%   \begin{center}
+%      \lable{tab:hoge}
+%      \caption{特に何を表すでもない例}
+%      \begin{tabular}[c|c|c]
+%      \end{tabular}
+%   \end{center}
+%\end{table}
+%/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
 
 \subsection{句読点について}
 句読点は必ず「, 」「. 」に統一してください.「、」「。」を用いたり両者が混在したりしている原稿が見受けられますので注意してください. 
@@ -120,7 +133,6 @@ pLaTeXで執筆される方はこのフォーマットに従って原稿を作成してください. 原稿執筆に
 
 \subsection{ハイパーリンクの利用について}
 このテンプレートファイルは基本的に冊子体の抄録集を想定して作成されています. しかし, URLを記載することで読者の理解を深めるならば, その利用も可とします. ただし, あくまでも, 永続的に存在するであろうURLに留めてください．
-
 
 \subsection{数式について}
 数式は原則としてTeXの標準機能とAMS（American Mathematical Society，米国数学会）の AMS-LaTeXを利用して下さい. 
@@ -130,7 +142,7 @@ pLaTeXで執筆される方はこのフォーマットに従って原稿を作成してください. 原稿執筆に
 \end{equation}
 もしくはeqnarray環境
 \begin{eqnarray}
-   \int_a^b g(x)dF(x) &=& \underset{\epsilon \downarrow 0}{\lim} \int_{[a+\epsilon , b]} g(x)dF(x),\\
+   \int_a^b g(x)dF(x) &=& \underset{\epsilon \downarrow 0}{\lim} \int_{[a+\epsilon , b]} g(x)dF(x), \\
    &=& \int_{(a,b]} g(x)dF(x),
 \end{eqnarray}
 を利用してください. 
