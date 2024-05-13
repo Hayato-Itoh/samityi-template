@@ -19,6 +19,6 @@ $ dvipdfmx template.dvi
 
 ## Change log
 
-- 2024 5/12
+- 2024 5/13
     - 公開開始
 
